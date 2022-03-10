@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js"
   },
-  "author": "Grupo 5",
+  "author": "Grupo 4",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

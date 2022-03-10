@@ -9,11 +9,11 @@ const app = express();
 
 // Connect the bd
 
-var corsOptions = {
-  origin: "http://localhost:8100",
-};
-
-app.use(cors(corsOptions));
+// var corsOptions = {
+//   origin: "http://localhost:3000",
+// };
+// app.use(cors(corsOptions));
+app.use(cors());
 
 connection();
 
@@ -28,6 +28,4 @@ app.use("/api/v1/mentors", require("./routes/mentor"));
 app.use("/api/v1/mentorizeds", require("./routes/mentorized"));
 app.use("/api/v1/meetings", require("./routes/meeting"));
 
-app.listen(app.get("port"), () => {
-  console.log(`App listening port: ${app.get("port")}`);
-});
+app.listen(process.env.PORT || app.get("port"), console.log(process.env.PORT || app.get("port")));
